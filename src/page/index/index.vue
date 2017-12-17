@@ -53,19 +53,19 @@
       <div class="hotsale-title">热销推荐</div>
       <div class="hotsale-con">
         <ul class="hotsaleList">
-          <li class="hotsale-list">
+          <li class="hotsale-list" v-for="(item, index) in hotlist" :key="item.id">
             <a href="javascript:;">
               <div class="hot-list-left">
-                <img src="http://img1.qunarzz.com/sight/p0/1712/9b/9b2de14b4b464560a3.img.jpg_140x140_77b6e579.jpg" alt="" class="hot-list-img">
+                <img :src="item.imgUrl" alt="" class="hot-list-img">
               </div>
               <div class="hot-list-right">
                 <div class="hot-list-rightT">
-                  <div class="top-topic">故宫</div>
-                  <div class="top-desc">东方宫殿</div>
+                  <div class="top-topic" v-text="item.topic"></div>
+                  <div class="top-desc" v-text="item.description"></div>
                 </div>
                 <div class="hot-list-rightB">
-                  ￥
-                  <em>55</em>
+                  <i>￥</i>
+                  <em v-text="item.price"></em>
                   <span>起</span>
                 </div>
               </div>
@@ -73,7 +73,54 @@
           </li>
         </ul>
       </div>
+      <div class="hotsale-more"><a href="javascript:;">查看所有商品</a></div>
     </div>
+
+    <div class="weekend-to-where">
+      <div class="hotsale-title">周末去哪儿</div>
+      <div class="weekend-con">
+        <ul class="weekendList">
+          <li class="weekend-list" v-for="(item, index) in weekendList" :key="item.id">
+            <a href="javascript:;">
+              <div class="weekend-list-top">
+                <img :src="item.imgUrl" alt="" class="weekend-list-img">
+              </div>
+              <div class="weekend-list-bottom">
+                <div class="weekend-list-topic" v-text="item.topic"></div>
+                <div class="weekend-list-desc" v-text="item.description"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <div class="warning">
+    <em class="iconfont">&#xe6d5;</em>
+    <span class="warning-pos">票面价</span>
+    <i>是指通过景区指定窗口售卖的纸质门票上标注的价格</i>
+  </div>
+
+  <div class="qunaer-footer">
+    <div class="main-nav-wrap">
+      <ul class="main-nav-list">
+        <li class="main-nav-li" v-for="(item, index) in footerList" :key="item.id">
+          <a href="javascript:;">
+            <div class="iconfont icon" v-html="item.icons"></div>
+            <span class="" v-text="item.text"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="verison">
+      <div class="touch"><a href="javascript:;">触屏版</a></div>
+      <div class="pc"><a href="javascript:;">电脑版</a></div>
+    </div>
+    <div class="copyright">
+      <span>Qunar 京ICP备05021087</span>
+      <a href="javascript:;">意见反馈</a>
+    </div>
+  </div>
+  
   </div>
 </template>
 
@@ -85,6 +132,8 @@ export default {
       swiperInfo: [],
       iconInfo: [],
       hotlist: [],
+      weekendList: [],
+      footerList: [],
       swiperOption: {
         autoplay: 1000,
         pagination: '.swiper-pagination',
@@ -106,6 +155,9 @@ export default {
       if (body && body.data && body.data.swiperinfo) {
         this.swiperInfo = body.data.swiperinfo
         this.iconInfo = body.data.icons
+        this.hotlist = body.data.hotList
+        this.weekendList = body.data.weekendList
+        this.footerList = body.data.footerList
       }
     }
   },
@@ -119,7 +171,6 @@ export default {
         }
         pages[page].push(value)
       })
-      console.log(pages)
       return pages
     }
   },
@@ -253,11 +304,13 @@ export default {
     padding:.27rem;
     color:#181818;
   }
+  .hotsale-con{
+    background:#fff;
+  }
   .hotsale-list{
-    /*height:1.87rem;*/
-    background:#aaa;
     padding:.26rem .9rem .23rem .24rem;
     overflow:hidden;
+    border-bottom:.01rem solid #e1e1e1;
   }
   .hotsale-list a{
     color:#171717;
@@ -273,9 +326,128 @@ export default {
   .hot-list-right{
     float:left;
     margin-left:.21rem;
-  }
-  .hot-list-right .hot-list-rightT .hot-topic{
     font-size:.26rem;
   }
-  
+  .hot-list-right .hot-list-rightT {
+    width:4.7rem;
+    white-space:nowrap;
+    overflow:hidden;
+  }
+  .top-desc {
+    width:4.7rem;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    color:#959595;
+    display:block;
+    margin-top:.2rem;
+    margin-bottom:.26rem;
+  }
+  .hot-list-rightB i{
+    color:#d8853f;
+    font-size:.12rem;
+  }
+  .hot-list-rightB em{
+    color:#d8853f;
+    font-weight:900;
+    font-size:.30rem;
+  }
+  .hot-list-rightB span{
+    color:#a0a0a0;
+    font-size:.22rem;
+  }
+  .hotsale-more{
+    background:#fff;
+  }
+  .hotsale-more a{
+    font-size:.26rem;
+    display:block;
+    padding: .29rem 2.93rem .32rem 2.92rem;
+  }
+  .weekend-to-where {
+    margin-bottom:.1rem;
+  }
+  .weekend-con{
+    background:#fff;
+  }
+  .weekend-list-top{
+    width:100%;
+    height:2.8rem;
+  }
+  .weekend-list-img{
+    width:100%;
+  }
+  .weekend-list-bottom{
+    padding:.25rem 0 .4rem .21rem;
+  }
+  .weekend-list-bottom .weekend-list-topic{
+    color:#2e2e2e;
+    font-size:.26rem;
+    margin-bottom:.2rem;
+  }
+  .weekend-list-desc{
+    color:#575757;
+    font-size:.22rem;
+  }
+  .warning{
+    font-size:.22rem;
+    padding:.19rem 0 .19rem .13rem;
+    background:#fff;
+    color:#6d6d6d;
+  }
+  .warning .warning-pos{
+    color:#555;
+  }
+  .main-nav-wrap{
+    padding:.19rem .92rem .33rem .96rem;
+  }
+  .main-nav-list{
+    float:left;
+    height:.4rem;
+    overflow:hidden;
+  }
+  .main-nav-li{
+    float:left;
+    margin-bottom:.11rem;
+    margin-right:.13rem;
+  }
+  .main-nav-li a{
+    color:#b7b7b7;
+  }
+  .main-nav-li .icon{
+    display:inline-block;
+    /*float:left;*/
+  }
+  .main-nav-li span{
+    text-decoration:underline;
+  }
+  .verison{
+    /*height:1.17rem;*/
+    width:100%;
+    border-top:.01rem solid #c4c4c4;
+    padding:.22rem 2.57rem .22rem 2.63rem;
+    font-size:.24rem;
+  }
+  .verison .touch{
+    display:inline-block;
+    margin-right:.64rem;
+  }
+  .verison .touch a{
+    color:#1a1a1a;
+  }
+  .verison .pc{
+     display:inline-block;
+  }
+  .copyright{
+    display:block;
+    font-size:.26rem;
+    text-align:center;
+    padding-bottom:.2rem;
+  }
+  .copyright a{
+    color:#a4a4a4;
+  }
+  .copyright span{
+    color:#a4a4a4;
+  }
 </style>

@@ -70,31 +70,90 @@
 			"imgUrl":"http://img1.qunarzz.com/sight/p0/1712/9b/9b2de14b4b464560a3.img.jpg_140x140_77b6e579.jpg",
 			"topic":"赛汉塔拉温泉",
 			"description":"全套泳池过滤恒温设备，带给您完美体验",
-			"price":"￥20"
+			"price":"20"
 		},{
-			"id":"0001",
-			"imgUrl":"http://img1.qunarzz.com/sight/p0/1712/9b/9b2de14b4b464560a3.img.jpg_140x140_77b6e579.jpg",
-			"topic":"赛汉塔拉温泉",
-			"description":"全套泳池过滤恒温设备，带给您完美体验",
-			"price":"￥20"
+			"id":"0002",
+			"imgUrl":"http://img1.qunarzz.com/sight/p0/1603/72/725d5827992042d090.img.jpg_140x140_4419440b.jpg",
+			"topic":"二连浩特国家地质公园",
+			"description":"恐龙化石群遗迹为主体景观的国家地质公园",
+			"price":"23"
 		},{
-			"id":"0001",
-			"imgUrl":"http://img1.qunarzz.com/sight/p0/1712/9b/9b2de14b4b464560a3.img.jpg_140x140_77b6e579.jpg",
-			"topic":"赛汉塔拉温泉",
-			"description":"全套泳池过滤恒温设备，带给您完美体验",
-			"price":"￥20"
+			"id":"0003",
+			"imgUrl":"http://img1.qunarzz.com/sight/p0/1704/41/41dfd4183d566d7aa3.img.jpg_140x140_51e46948.jpg",
+			"topic":"二连浩特市国门旅游景区",
+			"description":"与国外隔届相望",
+			"price":"1500"
 		},{
+			"id":"0004",
+			"imgUrl":"http://img1.qunarzz.com/sight/p0/1704/f9/f9a012407a261e3a3.img.jpg_140x140_6a32d139.jpg",
+			"topic":"伊林驿站博物馆",
+			"description":"反映驿站文化的专题博物馆",
+			"price":"23"
+		}],
+		"weekendList":[{
 			"id":"0001",
-			"imgUrl":"http://img1.qunarzz.com/sight/p0/1712/9b/9b2de14b4b464560a3.img.jpg_140x140_77b6e579.jpg",
-			"topic":"赛汉塔拉温泉",
-			"description":"全套泳池过滤恒温设备，带给您完美体验",
-			"price":"￥20"
+			"imgUrl":"http://img1.qunarzz.com/sight/source/1606/a2/c10424cf4acf79.jpg_r_640x214_d83730b5.jpg",
+			"topic":"呼市必游TOP5",
+			"description":"蒙古族歌手高亢,使人回味悠长"
 		},{
+			"id":"0002",
+			"imgUrl":"http://img1.qunarzz.com/sight/source/1711/a1/6d51d5059274da.jpg_r_640x214_34ec6f3e.jpg",
+			"topic":"温泉·内蒙古",
+			"description":"内蒙古冬季不再冷，来泡温泉吧"
+		},{
+			"id":"0003",
+			"imgUrl":"http://img1.qunarzz.com/sight/source/1511/14/1cf5dc2ecbfc16.jpg_r_640x214_b4b3a58a.jpg",
+			"topic":"最美丝路行",
+			"description":"情系西北，中国梦丝路行"
+		}],
+		"footerList":[{
 			"id":"0001",
-			"imgUrl":"http://img1.qunarzz.com/sight/p0/1712/9b/9b2de14b4b464560a3.img.jpg_140x140_77b6e579.jpg",
-			"topic":"赛汉塔拉温泉",
-			"description":"全套泳池过滤恒温设备，带给您完美体验",
-			"price":"￥20"
+			"icons":"&#xe601;",
+			"text":"机票"
+		},{
+			"id":"0002",
+			"icons":"&#xe601;",
+			"text":"机票"
+		},{
+			"id":"0003",
+			"icons":"&#xe601;",
+			"text":"机票"
+		},{
+			"id":"0004",
+			"icons":"&#xe601;",
+			"text":"机票"
+		},{
+			"id":"0005",
+			"icons":"&#xe601;",
+			"text":"机票"
+		},{
+			"id":"0006",
+			"icons":"&#xe601;",
+			"text":"机票"
+		},{
+			"id":"0007",
+			"icons":"&#xe601;",
+			"text":"机票"
+		},{
+			"id":"0008",
+			"icons":"&#xe601;",
+			"text":"机票"
+		},{
+			"id":"0009",
+			"icons":"&#xe601;",
+			"text":"机票"
+		},{
+			"id":"0010",
+			"icons":"&#xe601;",
+			"text":"机票"
+		},{
+			"id":"0011",
+			"icons":"&#xe601;",
+			"text":"机票"
+		},{
+			"id":"0012",
+			"icons":"&#xe601;",
+			"text":"机票"
 		}]
 	}
 }
